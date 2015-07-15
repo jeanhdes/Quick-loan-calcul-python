@@ -1,8 +1,7 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
-from tkinter import *
-from tkinter import messagebox 
+from Tkinter import *
 from array import *
 import math
 CalculTypeSavings = 0
