@@ -2,6 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 
 from Tkinter import *
+import tkMessageBox
 from array import *
 import math
 CalculTypeSavings = 0
@@ -9,11 +10,11 @@ CalculTypeLoan = 0
 Monthly = 0	
 
 def HelpLoan():
-    messagebox.showinfo("Help", "For Loan:\n1/In order to know the Monthly cost of an Loan\nEnter your Loan value, Loan rate and choose the duration in years\nSelect Monthly value calcul\nClick on action\n1/In order to know the amount of a Loan\nEnter your Monthly value, Loan rate and choose the duration in years\nThen select Amount value calcul checkbox\n And click on action")
+    tkMessageBox.showinfo("Help", "For Loan:\n1/In order to know the Monthly cost of an Loan\nEnter your Loan value, Loan rate and choose the duration in years\nSelect Monthly value calcul\nClick on action\n1/In order to know the amount of a Loan\nEnter your Monthly value, Loan rate and choose the duration in years\nThen select Amount value calcul checkbox\n And click on action")
 
 
 def HelpSaving():
-    messagebox.showinfo("Help", "For Savings:\n1/In order to know the amount of monthly Savings to achieve a specific value of Savings\nEnter your current Savings, then your Savings rate and choose the duration in years\nSelect Monthly value calcul\nClick on action\n1/In order to know the amount of Savings that you'll reach in a specific amount of time\nEnter your current Savings, then your Savings rate and choose the duration in years\nThen select Amount value calcul checkbox\n And click on action")
+    tkMessageBox.showinfo("Help", "For Savings:\n1/In order to know the amount of monthly Savings to achieve a specific value of Savings\nEnter your current Savings, then your Savings rate and choose the duration in years\nSelect Monthly value calcul\nClick on action\n1/In order to know the amount of Savings that you'll reach in a specific amount of time\nEnter your current Savings, then your Savings rate and choose the duration in years\nThen select Amount value calcul checkbox\n And click on action")
 	
 	
 def CheckbuttonMonthlyLoan():
@@ -56,13 +57,13 @@ def CheckbuttonAmountSavings():
 	
 def AmountSavingsCalcul():
 	if len(entryMonthlySavings.get()) == 0:
-		    messagebox.showinfo("Error", "Please enter your monthly savings")
+		    tkMessageBox.showinfo("Error", "Please enter your monthly savings")
 	else :
 		if len((entryRateSavings.get().replace(',', '.'))) == 0:
-			messagebox.showinfo("Error", "Please enter your savings rate")
+			tkMessageBox.showinfo("Error", "Please enter your savings rate")
 		else :
 			if len(entryYearsSavings.get()) == 0:
-				messagebox.showinfo("Error", "Please enter a savings duration in years")
+				tkMessageBox.showinfo("Error", "Please enter a savings duration in years")
 			else :			
 				SavingsRate = float(entryRateSavings.get().replace(',', '.'))
 				CapitalInitial = 0
@@ -85,13 +86,13 @@ def AmountSavingsCalcul():
 
 def MonthSavingsCalcul():
 	if len(entryAmountSavings.get()) == 0:
-		    messagebox.showinfo("Error", "Please enter the amount of savings you want to reach")
+		    tkMessageBox.showinfo("Error", "Please enter the amount of savings you want to reach")
 	else :
 		if len((entryRateSavings.get().replace(',', '.'))) == 0:
-			messagebox.showinfo("Error", "Please enter your savings rate")
+			tkMessageBox.showinfo("Error", "Please enter your savings rate")
 		else :
 			if len(entryYearsSavings.get()) == 0:
-				messagebox.showinfo("Error", "Please enter a savings duration in years")
+				tkMessageBox.showinfo("Error", "Please enter a savings duration in years")
 			else :		
 				SavingsRate = float(entryRateSavings.get().replace(',', '.'))
 				CapitalInitial = 0
@@ -121,7 +122,7 @@ def CalculSavings():
 	elif CalculTypeSavings == 2 :
 		AmountSavingsCalcul()
 	else :
-		messagebox.showinfo("What do you want to do?", "Please select a calcul")
+		tkMessageBox.showinfo("What do you want to do?", "Please select a calcul")
 	
 def LoanDumpToFile():
 	global Monthly
@@ -164,13 +165,13 @@ def LoanDumpToFile():
 	
 def LoanCalculMonthly():
 	if len(entryAmountLoan.get()) == 0:
-		    messagebox.showinfo("Error", "Please enter the amount value of your loan")
+		    tkMessageBox.showinfo("Error", "Please enter the amount value of your loan")
 	else :
 		if len((entryRateLoan.get().replace(',', '.'))) == 0:
-			messagebox.showinfo("Error", "Please enter your loan rate")
+			tkMessageBox.showinfo("Error", "Please enter your loan rate")
 		else :
 			if len(entryYearsLoan.get()) == 0:
-				messagebox.showinfo("Error", "Please enter the duration of your loan")
+				tkMessageBox.showinfo("Error", "Please enter the duration of your loan")
 			else :	
 				global Monthly
 				global Amount
@@ -188,13 +189,13 @@ def LoanCalculMonthly():
 def LoanCalculValue():
 	
 	if len(entryMonthlyLoan.get()) == 0:
-		    messagebox.showinfo("Error", "Please enter how much you want to pay each month")
+		    tkMessageBox.showinfo("Error", "Please enter how much you want to pay each month")
 	else :
 		if len((entryRateLoan.get().replace(',', '.'))) == 0:
-			messagebox.showinfo("Error", "Please enter your loan rate")
+			tkMessageBox.showinfo("Error", "Please enter your loan rate")
 		else :
 			if len(entryYearsLoan.get()) == 0:
-				messagebox.showinfo("Error", "Please enter the duration of your loan")
+				tkMessageBox.showinfo("Error", "Please enter the duration of your loan")
 			else :
 				global Monthly
 				global Amount
@@ -217,7 +218,7 @@ def CalculLoan():
 	elif CalculTypeLoan == 2 :
 		LoanCalculValue()
 	else :
-		messagebox.showinfo("What do you want to do?", "Please select a calcul")
+		tkMessageBox.showinfo("What do you want to do?", "Please select a calcul")
 
 
 
